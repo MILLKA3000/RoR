@@ -1,2 +1,19 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>User :</h1>
+<% puts @user.name %>
+<%= form_tag("/users/edit") do %>
+  <% @user.each { |u| %>
+    <%= label_tag(u.name, "Name") %>
+    <%= text_field_tag(:name, u.name) %>
+    <br>
+    <%= label_tag(u.email, "E-mail") %>
+    <%= text_field_tag(:email, u.email) %>
+    <br>
+    <%= label_tag(u.login, "Login") %>
+    <%= text_field_tag(:login, u.login) %>
+    <br>
+    <%= label_tag(:pass, "New-pass") %>
+    <%= text_field_tag(:pass) %>
+    <br>
+    <%= submit_tag("Save") %>
+  <% } %>
+<% end %>

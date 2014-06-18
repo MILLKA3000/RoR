@@ -1,2 +1,20 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, "New user") %>
+<h1>New user</h1>
+<%= form_tag("/users/new") do %>
+
+    <%= label_tag(:name, "Name") %>
+    <%= text_field_tag(:name) %>
+    <br>
+    <%= label_tag(:email, "E-mail") %>
+    <%= text_field_tag(:email) %>
+    <br>
+    <%= label_tag(:login, "Login") %>
+    <%= text_field_tag(:login) %>
+    <br>
+    <%= label_tag(:pass, "Password") %>
+    <%= text_field_tag(:pass) %>
+    <br>
+<%= submit_tag("Save") %>
+<% end %>
+
+

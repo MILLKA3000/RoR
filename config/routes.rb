@@ -1,4 +1,12 @@
 MilkaProjekt::Application.routes.draw do
+  match 'users/new' => 'users#new', as: :usernew
+  match 'users/edit' => 'users#edit'
+  get   'users/view'
+  get   'users/edit/:id' => 'users#edit', as: :useredit, id: /\d+/
+  get   'users/del/:id' => 'users#del', as: :userdel, id: /\d+/
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

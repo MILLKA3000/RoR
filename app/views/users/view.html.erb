@@ -1,2 +1,22 @@
-<h1>Users#view</h1>
-<p>Find me in app/views/users/view.html.erb</p>
+<h1>Users</h1>
+<table>
+<% @user.each { |users| %>
+    <tr>
+      <td>
+        <%=  users.name %>
+      </td>
+      <td>
+        <%=  users.email %>
+      </td>
+      <td>
+        <%=  users.login %>
+      </td>
+      <td>
+        <%= link_to "Edit", useredit_path(users.id) %>
+      </td>
+      <td>
+        <%= link_to "Delete", userdel_path(users.id) %>
+      </td>
+    </tr>
+<% } %>
+</table>
